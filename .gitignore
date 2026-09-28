@@ -25,3 +25,6 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+
+# Test & Cleanup
+01_test_cleanup_infrastructure.ipynb
