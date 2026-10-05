@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: youtube_silver
+    database: youtube_content_intelligence
+    schema: silver
+    tables:
+      - name: slv_creators
+      - name: slv_creator_daily_stats
+      - name: slv_video_category
+      - name: slv_videos
+      - name: slv_video_daily_stats
