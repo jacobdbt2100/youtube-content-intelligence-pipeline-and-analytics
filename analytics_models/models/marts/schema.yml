@@ -1,0 +1,51 @@
+version: 2
+
+models:
+  - name: dim_creator
+    description: "Creator dimension containing one record per tracked creator."
+    columns:
+      - name: channel_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_video
+    description: "Video dimension containing one record per tracked video."
+    columns:
+      - name: video_id
+        tests:
+          - not_null
+          - unique
+      - name: channel_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_creator')
+              field: channel_id
+      - name: category_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_category')
+              field: category_id
+
+  - name: dim_category
+    description: "Video category dimension containing one record per category."
+    columns:
+      - name: category_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_date
+    description: "Calendar dimension containing one record per date across the collection period."
+    columns:
+      - name: collection_date
+        tests:
+          - not_null
+          - unique
+      - name: day_type
+        tests:
+          - accepted_values:
+              values: ['Weekday', 'Weekend']
+      

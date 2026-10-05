@@ -10,3 +10,55 @@ sources:
       - name: slv_video_category
       - name: slv_videos
       - name: slv_video_daily_stats
+
+models:
+  - name: stg_creators
+    description: "Standardised creator records from the Silver layer."
+    columns:
+      - name: channel_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_creator_daily_stats
+    description: "Standardised daily statistics for tracked creators."
+    columns:
+      - name: channel_id
+        tests:
+          - not_null
+      - name: collection_date
+        tests:
+          - not_null
+
+  - name: stg_video_category
+    description: "Standardised YouTube video category records."
+    columns:
+      - name: category_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_videos
+    description: "Standardised video metadata for tracked creators."
+    columns:
+      - name: video_id
+        tests:
+          - not_null
+          - unique
+      - name: channel_id
+        tests:
+          - not_null
+      - name: category_id
+        tests:
+          - not_null
+
+  - name: stg_video_daily_stats
+    description: "Standardised daily statistics for tracked videos."
+    columns:
+      - name: video_id
+        tests:
+          - not_null
+      - name: collection_date
+        tests:
+          - not_null
+        
