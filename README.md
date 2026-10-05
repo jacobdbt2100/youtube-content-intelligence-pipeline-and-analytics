@@ -49,15 +49,10 @@ Streamlit app / interactive dashboard
 Streamlit Community Cloud hosting / deployment
 ```
 
-## Modelling
+## Data Transformation
 
-- What questions should this project answer?
-- What metrics/KPIs answer those questions?
-- Which metrics can we reliably calculate from our current data?
-- What additional data, if any, would be needed?
-- Define the Gold models around those metrics
-- Then build the dbt staging → intermediate → marts layer.
-- Finally, the visualization becomes largely a matter of presenting the already-defined analytical outputs.
+## Data Modelling
+
 
 
 
