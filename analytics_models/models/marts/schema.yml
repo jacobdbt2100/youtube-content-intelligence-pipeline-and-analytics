@@ -16,18 +16,6 @@ models:
         tests:
           - not_null
           - unique
-      - name: channel_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('dim_creator')
-              field: channel_id
-      - name: category_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('dim_category')
-              field: category_id
 
   - name: dim_category
     description: "Video category dimension containing one record per category."
@@ -44,8 +32,62 @@ models:
         tests:
           - not_null
           - unique
-      - name: day_type
+
+  - name: fct_video_performance
+    description: "Daily video performance metrics including views, engagement and engagement rates."
+    columns:
+      - name: video_id
         tests:
-          - accepted_values:
-              values: ['Weekday', 'Weekend']
-      
+          - not_null
+          - relationships:
+              to: ref('dim_video')
+              field: video_id
+
+      - name: channel_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_creator')
+              field: channel_id
+
+      - name: category_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_category')
+              field: category_id
+
+      - name: collection_date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: collection_date
+  - name: fct_content_daily_velocity
+    description: "Daily content velocity metrics showing views, likes and comments gained per day."
+    columns:
+      - name: video_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_video')
+              field: video_id
+
+      - name: collection_date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: collection_date
+
+  - name: fct_content_early_velocity
+    description: "Early-life content performance milestones based on the first, third and seventh tracking days."
+    columns:
+      - name: video_id
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('dim_video')
+              field: video_id
+  
