@@ -90,4 +90,31 @@ models:
           - relationships:
               to: ref('dim_video')
               field: video_id
+  - name: fct_content_freshness_daily
+    description: "Daily cumulative views and engagement tracked against content age."
+    columns:
+      - name: video_id
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_video')
+              field: video_id
+
+      - name: collection_date
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_date')
+              field: collection_date
+
+  - name: fct_content_freshness
+    description: "Peak view velocity, time to peak, and pre- and post-peak velocity comparisons for each video."
+    columns:
+      - name: video_id
+        tests:
+          - not_null
+          - unique
+          - relationships:
+              to: ref('dim_video')
+              field: video_id
   
