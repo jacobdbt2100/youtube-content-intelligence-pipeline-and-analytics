@@ -63,6 +63,7 @@ models:
           - relationships:
               to: ref('dim_date')
               field: collection_date
+  
   - name: fct_content_daily_velocity
     description: "Daily content velocity metrics showing views, likes and comments gained per day."
     columns:
@@ -90,6 +91,7 @@ models:
           - relationships:
               to: ref('dim_video')
               field: video_id
+  
   - name: fct_content_freshness_daily
     description: "Daily cumulative views and engagement tracked against content age."
     columns:
@@ -118,3 +120,69 @@ models:
               to: ref('dim_video')
               field: video_id
   
+  - name: fct_creator_daily_performance
+    description: "Daily creator performance metrics, including subscriber growth and growth rate."
+    columns:
+      - name: channel_id
+        description: "Unique identifier for the creator."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_creator')
+                field: channel_id
+
+      - name: collection_date
+        description: "Date the creator statistics were collected."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_date')
+                field: collection_date
+
+      - name: subscriber_count
+        description: "Total subscriber count at the time of collection."
+
+      - name: previous_subscribers
+        description: "Subscriber count from the previous collection."
+
+      - name: subscriber_growth
+        description: "Change in subscriber count since the previous collection."
+
+      - name: subscriber_growth_rate
+        description: "Percentage change in subscriber count since the previous collection, rounded to two decimal places."
+  
+  - name: fct_creator_publishing_performance
+    description: "Creator-level publishing and channel performance metrics."
+    columns:
+      - name: channel_id
+        description: "Unique identifier for the creator's channel."
+        data_tests:
+          - not_null
+          - unique
+          - relationships:
+              arguments:
+                to: ref('dim_creator')
+                field: channel_id
+
+      - name: channel_name
+        description: "Name of the creator's channel."
+
+      - name: subscriber_count
+        description: "Latest recorded subscriber count."
+
+      - name: total_view_count
+        description: "Latest recorded cumulative channel view count."
+
+      - name: video_count
+        description: "Latest recorded total number of uploaded videos."
+
+      - name: average_views_per_video
+        description: "Estimated average cumulative views per uploaded channel video."
+
+      - name: average_days_between_publications
+        description: "Average number of days between consecutive tracked video publications."
+
+      - name: average_views_per_tracked_video
+        description: "Average latest view count across tracked videos for the creator."
