@@ -36,7 +36,6 @@ SELECT
     channel_id,
     collection_date,
     subscriber_count,
-    previous_subscribers,
     subscriber_growth,
     subscriber_growth_rate
 FROM daily_growth

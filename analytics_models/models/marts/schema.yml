@@ -109,7 +109,7 @@ models:
               to: ref('dim_date')
               field: collection_date
 
-  - name: fct_content_freshness
+  - name: fct_content_freshness_and_decay
     description: "Peak view velocity, time to peak, and pre- and post-peak velocity comparisons for each video."
     columns:
       - name: video_id
@@ -143,9 +143,6 @@ models:
 
       - name: subscriber_count
         description: "Total subscriber count at the time of collection."
-
-      - name: previous_subscribers
-        description: "Subscriber count from the previous collection."
 
       - name: subscriber_growth
         description: "Change in subscriber count since the previous collection."

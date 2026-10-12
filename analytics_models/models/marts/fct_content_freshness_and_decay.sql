@@ -1,6 +1,6 @@
 -- =============================================================================
--- fct_content_freshness.sql
--- Fact: content freshness and post-peak performance
+-- fct_content_freshness_and_decay.sql
+-- Fact: content freshness and post-peak performance (decay)
 -- Grain: one row per video (video_id)
 -- =============================================================================
 
