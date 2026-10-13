@@ -163,9 +163,6 @@ models:
                 to: ref('dim_creator')
                 field: channel_id
 
-      - name: channel_name
-        description: "Name of the creator's channel."
-
       - name: subscriber_count
         description: "Latest recorded subscriber count."
 

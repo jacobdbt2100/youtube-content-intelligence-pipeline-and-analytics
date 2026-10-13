@@ -31,11 +31,18 @@ SELECT
     stats.collection_date,
     DATEDIFF(
         stats.collection_date,
-        tracking.first_collection_date
+        videos.published_at
     ) AS content_age,
-    stats.view_count AS views_over_content_age,
-    stats.like_count + stats.comment_count AS engagement_over_content_age
+    DATEDIFF(
+        stats.collection_date,
+        tracking.first_collection_date
+    ) AS tracking_age_days,
+    stats.view_count AS views_over_tracking_age_days,
+    stats.like_count + stats.comment_count AS engagement_over_tracking_age_days
 
 FROM daily_stats AS stats
+
+INNER JOIN {{ ref('stg_videos') }} AS videos
+    ON stats.video_id = videos.video_id
 
 CROSS JOIN tracking_start AS tracking

@@ -66,7 +66,6 @@ latest_creator_stats AS (
 
 SELECT
     c.channel_id,
-    c.channel_name,
     s.subscriber_count,
     s.total_view_count,
     s.video_count,
