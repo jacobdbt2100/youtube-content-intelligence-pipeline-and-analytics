@@ -1,0 +1,35 @@
+
+  
+    
+        create or replace table `youtube_content_intelligence`.`marts`.`dim_video`
+      
+      
+    using delta
+  
+      
+      
+      
+      
+      
+      
+      
+      
+      as
+      -- =============================================================================
+-- dim_video.sql
+-- Dimension: video information
+-- Grain: one row per video (video_id)
+-- =============================================================================
+
+SELECT
+    video_id,
+    channel_id,
+    category_id,
+    title,
+    published_at,
+    duration_minutes,
+    video_url,
+    collected_at
+
+FROM `youtube_content_intelligence`.`staging`.`stg_videos`
+  
