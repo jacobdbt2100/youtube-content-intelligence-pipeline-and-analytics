@@ -10,14 +10,14 @@ YouTube Data API → Python → JSON → Databricks Auto Loader → Bronze → S
 
 ## Tech Stack
 
-- **Python** — Data extraction
-- **YouTube Data API** — Source data
-- **Databricks** — Data platform and orchestration
-- **Delta Lake** — Data storage
-- **dbt Core** — SQL transformations and data testing
-- **Lakeflow Jobs** — Pipeline scheduling and task dependencies
-- **Power BI** — Analytics and visualisation
-- **Git & GitHub** — Version control
+- **Python** – Data extraction
+- **YouTube Data API** – Source data
+- **Databricks** – Data platform and orchestration
+- **Delta Lake** – Data storage
+- **dbt Core** – SQL transformations and data testing
+- **Lakeflow Jobs** – Pipeline scheduling and task dependencies
+- **Power BI** – Analytics and visualisation
+- **Git & GitHub** – Version control
 
 ## Data Pipeline
 
