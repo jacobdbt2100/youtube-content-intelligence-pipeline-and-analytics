@@ -40,7 +40,7 @@ The Lakeflow Job, `youtube_content_intelligence_daily`, coordinates the pipeline
 - Video statistics: Bronze → Silver
 - dbt transformations run after both Silver tasks succeed.
 
-[View pipeline task configuration](https://github.com/jacobdbt2100/youtube-content-intelligence-pipeline-and-analytics/blob/main/dag.md)
+[Pipeline task structure](https://github.com/jacobdbt2100/youtube-content-intelligence-pipeline-and-analytics/blob/main/dag.md)
 
 ## Data Models
 
@@ -52,7 +52,7 @@ The dbt project contains staging models, dimensions, and fact tables for:
 - Content freshness and post-peak performance
 - Creator growth and publishing performance
 
-[View dbt models](https://github.com/jacobdbt2100/youtube-content-intelligence-pipeline-and-analytics/tree/main/analytics_models/models)
+[dbt models](https://github.com/jacobdbt2100/youtube-content-intelligence-pipeline-and-analytics/tree/main/analytics_models/models)
 
 ## Analytics
 
@@ -65,7 +65,7 @@ Power BI reports explore:
 - Creator growth; and
 - Publishing patterns.
 
-[View dashboard](LINK_TO_POWER_BI_DASHBOARD_OR_SCREENSHOTS)
+[youtube content intelligence dashboards](https://github.com/jacobdbt2100/youtube-content-intelligence-pipeline-and-analytics/blob/main/visualisation/youtube%20content%20intelligence%20dashboards.pbix)
 
 ## Repository Structure
 
@@ -85,11 +85,3 @@ See [repo_structure.md](https://github.com/jacobdbt2100/youtube-content-intellig
 ## Future Improvements
 
 [Add only planned improvements that remain relevant to the project.]
-
-
-
-
-
-
-
-
