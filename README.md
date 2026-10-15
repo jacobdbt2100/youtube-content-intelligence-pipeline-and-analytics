@@ -84,4 +84,9 @@ See [repo_structure.md](https://github.com/jacobdbt2100/youtube-content-intellig
 
 ## Future Improvements
 
-[Add only planned improvements that remain relevant to the project.]
+These improvements would make the pipeline more efficient, reliable, and maintainable:
+
+- Implement incremental Silver processing using Delta Lake `MERGE` operations (upserts).
+- Implement incremental dbt models to process only new or changed records.
+- Add automated data quality checks and pipeline failure monitoring.
+- Introduce CI/CD with GitHub Actions for automated testing and deployment.
