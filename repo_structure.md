@@ -1,3 +1,5 @@
+# Repository Structure
+
 ```text
 youtube-content-intelligence-pipeline-and-analytics/
 │
@@ -44,3 +46,10 @@ youtube-content-intelligence-pipeline-and-analytics/
 ├── README.md
 └── requirements.txt
 ```
+
+**Notes:**
+- `notebooks/`: Databricks Bronze and Silver processing notebooks.
+- `src/`: Python API client and extraction modules.
+- `analytics_models/`: dbt staging models, dimensions, facts, and macros.
+- `transformation/`: Local testing files, if retained in the repository.
+- `requirements.txt`: Python dependencies.
