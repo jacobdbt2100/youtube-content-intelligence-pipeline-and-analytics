@@ -6,13 +6,15 @@ An end-to-end data pipeline that collects YouTube data, processes it in Databric
 
 ## Architecture
 
-YouTube Data API → Python → JSON → Databricks Auto Loader → Bronze → Silver → dbt → Power BI
+YouTube Data API → Python → JSON → Databricks Auto Loader → Bronze → PySpark → Silver → dbt → Power BI
 
 ## Tech Stack
 
 - **Python** – Data extraction
 - **YouTube Data API** – Source data
 - **Databricks** – Data platform and orchestration
+- **Auto Loader** – Incremental file ingestion
+- **PySpark** – Data processing and standardisation
 - **Delta Lake** – Data storage
 - **dbt Core** – SQL transformations and data testing
 - **Lakeflow Jobs** – Pipeline scheduling and task dependencies
