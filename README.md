@@ -2,7 +2,7 @@
 
 ## Overview
 
-An end-to-end data pipeline that collects YouTube data, processes it in Databricks, transforms it with dbt, and presents insights in Power BI.
+An end-to-end data pipeline that collects YouTube creator statistics, video metadata, and daily performance data across tracked channels and their published content, processes the data in Databricks, transforms it with dbt, and presents insights in Power BI.
 
 ## Architecture
 
