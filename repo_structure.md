@@ -1,10 +1,6 @@
 ```text
 youtube-content-intelligence-pipeline-and-analytics/
 │
-├── jobs/
-│   ├── daily_pipeline.py
-│   └── reference_pipeline.py
-│
 ├── notebooks/
 │   ├── 00_setup_infrastructure.ipynb
 │   │
@@ -32,10 +28,9 @@ youtube-content-intelligence-pipeline-and-analytics/
 │       ├── video_daily_stats.py
 │       └── videos.py
 │
-├── dbt/
+├── analytics_models/
 │   ├── models/
 │   │   ├── staging/
-│   │   ├── intermediate/
 │   │   └── marts/
 │   │
 │   ├── macros/
@@ -44,20 +39,8 @@ youtube-content-intelligence-pipeline-and-analytics/
 │   ├── tests/
 │   └── dbt_project.yml
 │
-├── requirements.txt
+├── jobs_structure.md
+├── repo_structure.md
 ├── README.md
-└── repo_structure.md
+└── requirements.txt
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
