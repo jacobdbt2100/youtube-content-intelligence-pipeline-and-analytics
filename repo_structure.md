@@ -51,6 +51,5 @@ youtube-content-intelligence-pipeline-and-analytics/
 **Notes:**
 - `notebooks/`: Databricks Bronze and Silver processing notebooks.
 - `src/`: Python API client and extraction modules.
-- `analytics_models/`: dbt staging models, dimensions, facts, and macros.
-- `transformation/`: Local testing files, if retained in the repository.
+- `analytics_models/`: dbt staging models, marts, dimensions, facts, and macros.
 - `requirements.txt`: Python dependencies.
