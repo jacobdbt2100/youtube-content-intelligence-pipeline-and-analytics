@@ -41,9 +41,10 @@ youtube-content-intelligence-pipeline-and-analytics/
 │   ├── tests/
 │   └── dbt_project.yml
 │
-├── jobs_structure.md
-├── repo_structure.md
 ├── README.md
+├── lakeflow_job_structure.md
+├── metrics.md
+├── repo_structure.md
 └── requirements.txt
 ```
 
